@@ -1,5 +1,7 @@
 public class DataType {
 	public static void main(String[] args) {
-		bit a = (int) 10L;
+		byte b = 127;
+		b++;
+		System.out.println(b);
 	}
 }
