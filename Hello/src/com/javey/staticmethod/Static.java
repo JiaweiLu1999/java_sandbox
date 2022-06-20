@@ -2,7 +2,7 @@ package com.javey.staticmethod;
 
 public class Static {
     public static void main(String[] args) {
-        Student jae = new Student();
+        Student jae = new Student("jack");
         jae.addStudent(1);
         System.out.println(Student.getNum());
     }
@@ -10,7 +10,9 @@ public class Static {
 
 class Student {
     private static int num = 0;
-    private String name;
+
+    public Student(String name) {
+    }
 
     static {
         System.out.println();
@@ -25,5 +27,15 @@ class Student {
 
     public static void setNum(int num) {
         Student.num = num;
+    }
+}
+
+class Graduate extends Student {
+    public Graduate(String name) {
+        super(name);
+    }
+
+    public static int getNum() {
+        return Student.getNum();
     }
 }
