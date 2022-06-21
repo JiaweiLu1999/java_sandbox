@@ -1,6 +1,7 @@
 package com.javey.interface_;
 
 public class LittleMonkey extends Monkey implements canFly, canSwim{
+
     public LittleMonkey(String name) {
         super(name);
     }
