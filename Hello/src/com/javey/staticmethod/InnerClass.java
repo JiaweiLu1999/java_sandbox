@@ -20,6 +20,10 @@ public class InnerClass {
             }
         });
 
+        cellPhone.print();
+
+        CellPhone.iPhone iphone = new CellPhone.iPhone("javey", 13);
+
 
     }
 }
@@ -29,8 +33,29 @@ interface Bell {
 }
 
 class CellPhone {
+    private static String usr;
+    static class iPhone {
+        private final String usr;
+        private final int type;
+
+        public iPhone(String usr, int type) {
+            CellPhone.usr = "";
+            this.usr = usr;
+            this.type = type;
+        }
+
+        public void print() {
+            System.out.println("User: " + usr + " Type: " + type);
+        }
+    }
     public void alarmClock (Bell bell) {
         bell.ring();
+    }
+
+    public void print() {
+        iPhone phone = new iPhone("Jia wei", 13);
+        phone.print();
+
     }
 }
 interface Ia {
