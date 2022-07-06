@@ -22,6 +22,14 @@ public class InnerClass {
 
         cellPhone.print();
 
+        try {
+            int a = 0;
+            int b = 2;
+            int x = b/a;
+        } finally {
+            System.out.println("exit...");
+        }
+
         CellPhone.iPhone iphone = new CellPhone.iPhone("javey", 13);
 
 
