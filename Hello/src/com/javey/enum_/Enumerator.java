@@ -11,6 +11,8 @@ public class Enumerator {
         for (Direction value : Direction.values()) {
             System.out.println(value);
         }
+        String s1 = "leetcode";
+        System.out.println(s1.substring(4,8));
     }
 }
 

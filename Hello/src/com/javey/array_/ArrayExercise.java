@@ -1,5 +1,6 @@
 package com.javey.array_;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -17,6 +18,11 @@ public class ArrayExercise {
 //        Arrays.sort(bookArr);
         Arrays.sort(bookArr, Comparator.comparing(Book::getName));
         System.out.println(Arrays.toString(bookArr));
+
+        BigDecimal bd2 = new BigDecimal("12.1892631");
+        BigDecimal bd1 = new BigDecimal("3.1");
+        System.out.println(bd2.divide(bd1, BigDecimal.ROUND_CEILING));
+
     }
 
 }
