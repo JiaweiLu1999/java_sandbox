@@ -4,6 +4,7 @@ package com.javey.enum_;
  * @author Jiawei Lu (Wo shi sha bi)
  * @version 1.00000001
  */
+
 public class Enumerator {
     public static void main(String[] args) {
         Season s = Season.SPRING;
