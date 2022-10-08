@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class MyPanel extends JPanel implements KeyListener {
+public class MyPanel extends JPanel implements KeyListener, Runnable{
     Hero hero = null;
 
     public MyPanel() {
@@ -17,6 +17,10 @@ public class MyPanel extends JPanel implements KeyListener {
         super.paint(g);
         g.fillRect(0, 0, 1000, 750);
         drawTank(hero.getX(), hero.getY(), g, hero.getDir(), 0);
+
+        if (hero.shot != null && hero.shot.isLive) {
+            g.fill3DRect(hero.shot.x, hero.shot.y, 5, 5, false);
+        }
     }
 
 
@@ -87,6 +91,8 @@ public class MyPanel extends JPanel implements KeyListener {
             case KeyEvent.VK_A:
                 hero.setDir(3);
                 hero.moveLeft();
+            case KeyEvent.VK_J:
+                hero.startShot();
         }
         this.repaint();
     }
@@ -94,5 +100,17 @@ public class MyPanel extends JPanel implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
 
+    }
+
+    @Override
+    public void run() {
+        while (true) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            this.repaint();
+        }
     }
 }
