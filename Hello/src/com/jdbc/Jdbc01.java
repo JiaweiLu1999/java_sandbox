@@ -7,10 +7,8 @@ package com.jdbc;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.*;
-import java.util.HashMap;
 import java.util.Properties;
 
 public class Jdbc01 {
@@ -63,7 +61,6 @@ public class Jdbc01 {
 
     @Test
     public void connect03() throws Exception {
-
         Properties properties = new Properties();
         properties.load(new FileInputStream("./src/com/jdbc/mysql.properties"));
         String url = (String) properties.get("url");
